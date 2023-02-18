@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    display: flex;
+    width: 90vw;
+}
+
+.panel {
+    position: relative;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.4;
+    margin: 10px;
+    transition: flex 0.7s ease-in;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h3 {
+    position: absolute;
+    left: 25px;
+    bottom: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+.active {
+    flex: 4;
+}
+
+.active h3 {
+    opacity: 1;
+}
