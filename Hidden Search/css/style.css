@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #785cf2;
+}
+
+.box {
+    display: flex;
+    position: relative;
+    height: 50px;
+}
+
+input {
+    outline: none;
+    border: 0;
+    height: 100%;
+    width: 50px;
+    padding: 0 15px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+button {
+    position: absolute;
+    height: 100%;
+    width: 50px;
+    border: 0;
+    font-size: 20px;
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.active input {
+    width: 200px;
+}
+
+.active button {
+    transform: translateX(198px);
+}
