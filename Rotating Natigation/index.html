@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/iconfont.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <style>
+            @font-face {
+                font-family: 'iconfont'; /* Project id 3904190 */
+                src: url('//at.alicdn.com/t/c/font_3904190_eapl2s8t7co.woff2?t=1676805604077')
+                        format('woff2'),
+                    url('//at.alicdn.com/t/c/font_3904190_eapl2s8t7co.woff?t=1676805604077')
+                        format('woff'),
+                    url('//at.alicdn.com/t/c/font_3904190_eapl2s8t7co.ttf?t=1676805604077')
+                        format('truetype');
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <div class="tag">
+                <i class="iconfont icon-xuanxiang"></i>
+                <i class="iconfont icon-xuanxiang"></i>
+            </div>
+            <h1 class="title">Amazing Article</h1>
+            <h3 class="authority">Florin Pop</h3>
+            <p class="content">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia in ratione
+                dolores cupiditate, maxime aliquid impedit dolorem nam dolor omnis atque fuga labore
+                modi veritatis porro laborum minus, illo, maiores recusandae cumque ipsa quos.
+                Tenetur, consequuntur mollitia labore pariatur sunt quia harum aut. Eum maxime
+                dolorem provident natus veritatis molestiae cumque quod voluptates ab non, tempore
+                cupiditate? Voluptatem, molestias culpa. Corrupti, laudantium iure aliquam rerum
+                sint nam quas dolor dignissimos in error placeat quae temporibus minus optio eum
+                soluta cupiditate! Cupiditate saepe voluptates laudantium. Ducimus consequuntur
+                perferendis consequatur nobis exercitationem molestias fugiat commodi omnis.
+                Asperiores quia tenetur nemo ipsa.
+            </p>
+            <p class="name">My Dog</p>
+            <img src="img/pic.avif" alt="" />
+            <p class="content">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit libero deleniti rerum
+                quo, incidunt vel consequatur culpa ullam. Magnam facere earum unde harum. Ea culpa
+                veritatis magnam at aliquid. Perferendis totam placeat molestias illo laudantium?
+                Minus id minima doloribus dolorum fugit deserunt qui vero voluptas, ut quia cum amet
+                temporibus veniam ad ea ab perspiciatis, enim accusamus asperiores explicabo
+                provident. Voluptates sint, neque fuga cum illum, tempore autem maxime similique
+                laborum odio, magnam esse. Aperiam?
+            </p>
+        </div>
+        <div class="nav">
+            <ul>
+                <li style="margin-left: 0">HOME</li>
+                <li style="margin-left: 15px">ABOUT</li>
+                <li style="margin-left: 30px">CONTACT</li>
+            </ul>
+        </div>
+        <script>
+            const box = document.querySelector('.box')
+            const tag = document.querySelector('.tag')
+            const ul = document.querySelector('ul')
+            document.querySelector('.tag i:first-child').addEventListener('click', function () {
+                box.style.transform = 'rotate(-19deg)'
+                tag.style.transform = 'rotate(-90deg)'
+                ul.classList.add('active')
+            })
+            document.querySelector('.tag i:last-child').addEventListener('click', function () {
+                box.style.transform = ''
+                tag.style.transform = ''
+                ul.classList.remove('active')
+            })
+        </script>
+    </body>
+</html>
