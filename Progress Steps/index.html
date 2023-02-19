@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="box">
+            <div class="progress-box">
+                <div class="progress"></div>
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div>
+            <button id="prev" disabled>Prev</button>
+            <button id="next">Next</button>
+        </div>
+        <script>
+            let stepId = 1
+            const steps = document.querySelectorAll('.step')
+            const progress = document.querySelector('.progress')
+            const btn = document.querySelectorAll('button')
+            document.querySelector('#prev').addEventListener('click', function () {
+                stepId--
+
+                render()
+            })
+            document.querySelector('#next').addEventListener('click', function () {
+                stepId++
+
+                render()
+            })
+            function render() {
+                for (let i = 0; i < stepId; i++) {
+                    steps[i].classList.add('active')
+                }
+                for (let i = stepId; i < steps.length; i++) {
+                    steps[i].classList.remove('active')
+                }
+                progress.style.width = `${((stepId - 1) / (steps.length - 1)) * 100}%`
+                btn[0].disabled = stepId === 1 ? true : false
+                btn[1].disabled = stepId === steps.length ? true : false
+            }
+        </script>
+    </body>
+</html>
