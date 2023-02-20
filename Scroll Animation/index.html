@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Scroll to see the animation</h1>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <div class="content">Content</div>
+        <script>
+            const contents = document.querySelectorAll('.content')
+            window.addEventListener('scroll', checkBoxes)
+            checkBoxes()
+            function checkBoxes() {
+                const triggerBottom = (window.innerHeight / 5) * 4
+                contents.forEach((content) => {
+                    const Top = content.getBoundingClientRect().top
+                    if (Top < triggerBottom) {
+                        content.classList.add('show')
+                    } else {
+                        content.classList.remove('show')
+                    }
+                })
+            }
+        </script>
+    </body>
+</html>
