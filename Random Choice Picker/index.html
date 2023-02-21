@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="box">
+            <h1>Enter all of the choices divided by a comma (','). Press enter when you're done</h1>
+            <textarea placeholder="Enter choices here"></textarea>
+            <div class="pickers"></div>
+        </div>
+        <script>
+            const picker = document.querySelector('.pickers')
+            document.querySelector('textarea').addEventListener('input', function () {
+                picker.innerHTML = ''
+                const arr = this.value
+                    .split(',')
+                    .filter((tag) => tag.trim() !== '')
+                    .map((tag) => tag.trim())
+                arr.forEach((item) => {
+                    picker.innerHTML += `<span>${item}</span>`
+                })
+            })
+            document.querySelector('textarea').addEventListener('keyup', function (e) {
+                if (e.key == 'Enter') {
+                    this.value = ''
+                    randomSelect()
+                }
+            })
+
+            function randomSelect() {
+                const times = 30
+                const interval = setInterval(() => {
+                    const randomTag = pickRandomTag()
+                    highlightTag(randomTag)
+                    setTimeout(() => {
+                        unHighlightTag(randomTag)
+                    }, 100)
+                }, 100)
+                setTimeout(() => {
+                    clearInterval(interval)
+                    setTimeout(() => {
+                        const randomTag = pickRandomTag()
+                        highlightTag(randomTag)
+                    }, 100)
+                }, times * 100)
+            }
+
+            function pickRandomTag() {
+                const tags = document.querySelectorAll('span')
+                return tags[Math.floor(Math.random() * tags.length)]
+            }
+
+            function highlightTag(tag) {
+                tag.classList.add('highlight')
+            }
+
+            function unHighlightTag(tag) {
+                tag.classList.remove('highlight')
+            }
+        </script>
+    </body>
+</html>

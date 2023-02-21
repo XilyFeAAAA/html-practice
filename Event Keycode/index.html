@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="box">Press any key to get the keyCode</div>
+        <script>
+            const body = document.body
+            document.addEventListener('keyup', function (e) {
+                body.innerHTML = `
+                <div class="box key">${e.key}</div>
+                <div class="box keyCode">${e.keyCode}</div>
+                <div class="box code">${e.code}</div>
+                `
+            })
+        </script>
+    </body>
+</html>

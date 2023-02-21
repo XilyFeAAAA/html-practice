@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #e1e1e1;
+    font-family: 'Muli', sans-serif;
+}
+
+.box {
+    position: relative;
+    min-width: 150px;
+    padding: 20px 20px;
+    text-align: center;
+    border: 1px solid grey;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #eeeeee;
+    margin: 15px;
+}
+
+.box::before {
+    font-size: 15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -25px;
+}
+
+.key::before {
+    content: 'event.key';
+}
+
+.keyCode::before {
+    content: 'event.keyCode';
+}
+
+.code::before {
+    content: 'event.code';
+}

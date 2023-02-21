@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="box">
+            <h1>Don't Laugh Challenge</h1>
+            <p class="joke"></p>
+            <button>Get Another Joke</button>
+        </div>
+        <script>
+            const jokeEl = document.querySelector('.joke')
+            document.querySelector('button').addEventListener('click', generateJoke)
+            async function generateJoke() {
+                const config = {
+                    headers: {
+                        Accept: 'application/json',
+                    },
+                }
+                const res = await fetch('https://icanhazdadjoke.com', config)
+                const data = await res.json()
+                jokeEl.innerHTML = data.joke
+            }
+            generateJoke()
+        </script>
+    </body>
+</html>

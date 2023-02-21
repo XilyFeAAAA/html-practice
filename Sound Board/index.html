@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <audio src="aud/applause.mp3"></audio>
+        <audio src="aud/boo.mp3"></audio>
+        <audio src="aud/gasp.mp3"></audio>
+        <audio src="aud/tada.mp3"></audio>
+        <audio src="aud/victory.mp3"></audio>
+        <audio src="aud/wrong.mp3"></audio>
+        <div class="box">
+            <button>applause</button>
+            <button>boo</button>
+            <button>gasp</button>
+            <button>tada</button>
+            <button>victory</button>
+            <button>wrong</button>
+        </div>
+        <script>
+            const audios = document.querySelectorAll('audio')
+            const btns = document.querySelectorAll('button')
+            btns.forEach((btn, idx) => {
+                btn.addEventListener('click', function () {
+                    stopMusic()
+                    audios[idx].play()
+                })
+            })
+
+            const stopMusic = function () {
+                audios.forEach((audio) => audio.pause())
+            }
+        </script>
+    </body>
+</html>
